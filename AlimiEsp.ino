@@ -41,8 +41,6 @@ void setup() {
   // Print the IP address
   Serial.println(WiFi.localIP());
 
- 
-
 }
  
 void loop() {
@@ -78,17 +76,16 @@ void loop() {
     
     digitalWrite(LED_BUILTIN, HIGH);            // LED ON
 
-  
   }
+ 
   else                                        
   {
     client.print("<H1 style='color: red'>부재중</H1>");       
     client.println("<br>");
    
     //client.println(digitalRead(PIR));
-    digitalWrite(LED_BUILTIN, LOW);                   // LED OFF
-                       
-}
+    digitalWrite(LED_BUILTIN, LOW);                   // LED OFF                       
+  }
  // client.println("<br>");
  // client.println("<br>");
  
@@ -96,8 +93,4 @@ void loop() {
   client.println("<pre>");
   client.print("</body>\n</html>");
 
-
-
-
- 
 }
