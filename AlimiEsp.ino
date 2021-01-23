@@ -1,6 +1,6 @@
 #include <WiFi.h>
 
- 
+
 const char* ssid     = ""; // 사용 중 인 와이파이 이름
 const char* password = ""; // 와이파이 패스워드
 
@@ -45,7 +45,6 @@ void setup() {
  
 void loop() {
   
-//  int val = digitalRead(PIR); // cds 센서값 저장
   delay(50);
   Serial.println(digitalRead(PIR));
   WiFiClient client = server.available();
@@ -72,9 +71,7 @@ void loop() {
     client.print("<H1 style='color: blue'>재실중</H1> ");  
     client.println("<br>");
     
-    //client.println(digitalRead(PIR));
-    
-    digitalWrite(LED_BUILTIN, HIGH);            // LED ON
+    digitalWrite(LED_BUILTIN, HIGH);                  // LED ON
 
   }
  
@@ -82,12 +79,9 @@ void loop() {
   {
     client.print("<H1 style='color: red'>부재중</H1>");       
     client.println("<br>");
-   
-    //client.println(digitalRead(PIR));
+
     digitalWrite(LED_BUILTIN, LOW);                   // LED OFF                       
   }
- // client.println("<br>");
- // client.println("<br>");
  
   client.println("<H1> 입니다!! </H1>"); // 페이지 내용 설정
   client.println("<pre>");
